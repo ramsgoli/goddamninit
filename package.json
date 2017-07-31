@@ -26,7 +26,9 @@
     "minimist": "^1.2.0",
     "webpack": "^3.4.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jest": "^20.0.4"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ramsgoli/goddamninit.git"
@@ -34,5 +36,9 @@
   "bugs": {
     "url": "https://github.com/ramsgoli/goddamninit/issues"
   },
-  "homepage": "https://github.com/ramsgoli/goddamninit#readme"
+  "homepage": "https://github.com/ramsgoli/goddamninit#readme",
+  "jest": {
+    "verbose": true,
+    "collectCoverageFrom" : ["**/*.{js,jsx}", "!**/node_modules/**", "!**/vendor/**"]
+  }
 }
