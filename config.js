@@ -2,23 +2,17 @@ module.exports = {
     BASE_FILE_STRUCTURE: [
         'webpack.config.js',
         '.babelrc',
-        'package.json',
+        {
+            public: [
+                'index.html'
+            ]
+        },
         {
             src: [
+                'index.js',
                 {
-                    client: [
-                        'index.html',
-                        {
-                            components: [
-                                'App.js'
-                            ]
-                        },
-                        {
-                            public: [
-                                'build.js',
-                                'style.css'
-                            ]
-                        }
+                    components: [
+                        'App.js'
                     ]
                 }
             ]

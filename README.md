@@ -10,3 +10,20 @@ getting in React needs to know.
 
 Goddamninit is a minimalistic, quick-start tool that will help you get started with a React project in seconds. Forget `npm init` `git init` and downloading the hundred billion dependencies that make a React project tick. Goddamninit takes care of it all for you by walking you through the setup process, making it virtually painless. Never say “God damnit React, you pain in the ass” again!
 
+### Usage
+Output:
+
+```
+|––src/
+|    |––client/
+|        |––index.html
+|        |––index.js
+|        |––components/
+|             |––App.js
+|        |––public/
+|             |––build.js
+|             |––style.css
+|––webpack.config.js
+|––.babelrc
+|––package.json
+```
