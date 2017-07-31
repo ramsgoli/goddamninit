@@ -7,7 +7,7 @@
     "goddamninit": "./index.js"
   },
   "scripts": {
-    "test": "jest test"
+    "test": "jest tests/"
   },
   "keywords": [
     "GIT",
