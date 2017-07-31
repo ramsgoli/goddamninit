@@ -10,20 +10,26 @@ getting in React needs to know.
 
 Goddamninit is a minimalistic, quick-start tool that will help you get started with a React project in seconds. Forget `npm init` `git init` and downloading the hundred billion dependencies that make a React project tick. Goddamninit takes care of it all for you by walking you through the setup process, making it virtually painless. Never say “God damnit React, you pain in the ass” again!
 
-### Usage
+#### Usage
+
+* Clone the repository
+* Run `npm install -g`
+* Usage: `goddamninit name (optional)` If a name is specified, a new directory is created to house the project
+
 Output:
 
 ```
-|––src/
-|    |––client/
-|        |––index.html
-|        |––index.js
-|        |––components/
-|             |––App.js
-|        |––public/
-|             |––build.js
-|             |––style.css
-|––webpack.config.js
-|––.babelrc
-|––package.json
+|––name/
+|  |––public/
+|     |––index.html
+|  |––src/
+|     |––index.js
+|     |––components/
+|         |––App.js
+|  |––webpack.config.js
+|  |––.babelrc
+|  |––package.json
 ```
+
+* cd into your new directory and run `webpack-dev-server`
+* navigate to `http://localhost:8080` to see the react site
