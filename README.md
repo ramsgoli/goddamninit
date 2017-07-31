@@ -1,5 +1,7 @@
 # Goddamninit v1.0.0
 
+[![Build Status](https://travis-ci.org/ramsgoli/goddamninit.svg?branch=master)](https://travis-ci.org/ramsgoli/goddamninit)
+
 #### God damnit. React projects are a pain in the ass.
 
 These were the first words that came to mind when I set out to begin my first React project. I had very little experience in front-end development, and had only learned javascript a few months prior. So, I decided to pick up a new skill and learn super popular front-end framework, React, developed by the friendly folks over at Facebook. React has been a buzzword in the web-dev community for some time now, kind of like how the words “disrupt the status quo” seems to leak out of every business
