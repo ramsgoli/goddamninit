@@ -15,8 +15,10 @@ Goddamninit is a minimalistic, quick-start tool that will help you get started w
 #### Usage
 
 * Clone the repository
+* CD into the repository: `cd goddamninit`
 * Run `npm install -g`
-* Usage: `goddamninit name (optional)` If a name is specified, a new directory is created to house the project
+* If you don't have webpack-dev-server installed globally, run `npm install -g webpack-dev-server`
+* Usage: `goddamninit name (optional)` If a name is not specified, the project is initialized in the current working directory
 
 Output:
 
