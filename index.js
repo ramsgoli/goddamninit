@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const fs = require('fs');
 const chalk = require('chalk');
 const dot = require('dot');
@@ -5,9 +6,10 @@ const figlet = require('figlet');
 const handlebars = require('handlebars');
 const init = require('init-package-json');
 const path = require('path');
-const { execSync } = require('child_process')
+const { execSync } = require('child_process');
 
-const argParse = require('./lib/argParse');
+const getArgs = require('./lib/getArgs');
+const getDirectoryName = require('./lib/getDirectoryName');
 const makeDirectoryWithName = require('./lib/makeDirectoryWithName');
 const config = require('./config');
 const createFileStructure = require('./lib/createFileStructure');
@@ -22,40 +24,45 @@ const DEV_DEPENDENCIES = [
     'html-webpack-plugin'
 ];
 
-console.log(
-    chalk.yellow(
-       figlet.textSync('goddamninit')
-    )
-);
+function index(args) {
+    args = args || getArgs();
 
-const argv = argParse();
-const directoryName = argv._[0];
+    console.log(
+        chalk.yellow(
+            figlet.textSync('goddamninit')
+        )
+    );
 
-if (directoryName) {
-    makeDirectoryWithName(directoryName);
-    process.chdir(directoryName);
-}
+    const directoryName = getDirectoryName(args);
 
-try{
-    execSync('npm init --y', function(err) {
+    if (directoryName) {
+        makeDirectoryWithName(directoryName);
+        process.chdir(directoryName);
+    }
+
+    try{
+        execSync('npm init --y', function(err) {
+            console.log(
+                chalk.red(err)
+            );
+        });
+        createFileStructure(config.BASE_FILE_STRUCTURE);
+    }
+    catch(err) {
         console.log(
             chalk.red(err)
         );
-    });
-    createFileStructure(config.BASE_FILE_STRUCTURE);
-}
-catch(err) {
+        process.exit(-1);
+    }
+
+    initializeDependencies(DEPENDENCIES, DEV_DEPENDENCIES);
+
     console.log(
-        chalk.red(err)
+        chalk.green(
+            "Your project has been initialized!"
+        )
     );
-    process.exit(-1);
+    process.exit(0);
 }
 
-initializeDependencies(DEPENDENCIES, DEV_DEPENDENCIES);
-
-console.log(
-    chalk.green(
-        "Your project has been initialized!"
-    )
-);
-process.exit(0);
+index();
